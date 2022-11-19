@@ -1,17 +1,5 @@
-STATIC_URL = '/static/'
+from django.conf.urls import url
 
-MEDIA_URL = '/media/'
+from django.conf import settings
 
-  
-
-if DEBUG:
-
-  STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
-
-else:
-
-  STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-
-  
-
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+from django.views.static import serve
