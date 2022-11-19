@@ -1,3 +1,17 @@
-url(r'^media/(?P<path>.*)$', serve,{'document_root': settings.MEDIA_ROOT}),
+STATIC_URL = '/static/'
 
-  url(r'^static/(?P<path>.*)$', serve,{'document_root': settings.STATIC_ROOT}),
+MEDIA_URL = '/media/'
+
+  
+
+if DEBUG:
+
+  STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]
+
+else:
+
+  STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+  
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
